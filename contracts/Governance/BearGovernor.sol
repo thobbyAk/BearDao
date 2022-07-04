@@ -84,6 +84,8 @@ contract BearGovernor is
         return super.proposalThreshold();
     }
 
+    ///abiencoded with signature
+    //https://github.com/compound-finance/compound-protocol/blob/master/tests/Governance/GovernorBravo/ProposeTest.js
     function _execute(
         uint256 proposalId,
         address[] memory targets,

@@ -1,3 +1,4 @@
+//SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.11; // Designate version of solidity
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol"; // ERC20 template
@@ -37,9 +38,6 @@ contract BearToken is ERC20, ERC20Permit, ERC20Votes, ERC20Wrapper {
         internal
         override(ERC20, ERC20Votes)
     {
-        uint256 dayOfWeek = ((block.timestamp / 86400) + 4) % 7; // 0 = Sunday, 1 = Monday, etc
-
-        require(dayOfWeek != 5); // Require that today is not friday
         super._mint(to, amount);
     }
 
